@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monetka.kz Login Page</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <h4 style="border-bottom: 1px solid #c5c5c5;">
+                <i class="glyphicon glyphicon-user">
+                </i>
+                Вход
+            </h4>
+            <div style="padding: 20px;" id="form-login">
+                <form accept-charset="UTF-8" role="form" id="login-form" method="post">
+                    <fieldset>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">@</span>
+                            <input class="form-control" placeholder="Email" name="email" type="email" required=""
+                                   autofocus="">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                            </span>
+                            <input class="form-control" placeholder="Password" name="password" type="password" value=""
+                                   required="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Войти
+                            </button>
+                            <p class="help-block">
+                                <a class="pull-right text-muted" href="#" id="remind" onClick="$('#form-login').hide(); $('#form-reminder').show()">
+                                    <small>Забыли пароль?</small>
+                                </a>
+                                <a class="pull-left text-muted" href="#" id="register" onClick="$('#form-login').hide(); $('#form-register').show()">
+                                    <small>Еще не зарегистрированы?</small>
+                                </a>
+                            </p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div style="display: none;" id="form-reminder">
+                <h4 class="">
+                    Забыли пароль?
+                </h4>
+                <form accept-charset="UTF-8" role="form" id="login-recordar" method="post">
+                    <fieldset>
+                        <span class="help-block">
+                            E-mail адрес, который используется для входа в аккаунт
+                            <br>
+                            Мы вышлем Вам письмо на указанный e-mail с дальнейшими инструкциями.
+                        </span>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">@
+                            </span>
+                            <input class="form-control" placeholder="Email" name="email" type="email" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-olvidado">
+                            Продолжить
+                        </button>
+                        <p class="help-block">
+                            <a class="text-muted" href="#" id="acceso" onClick="$('#form-reminder').hide(); $('#form-login').show()">
+                                <small>Вход</small>
+                            </a>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+            <div style="display: none;" id="form-register">
+                <h4 class="">
+                    Еще не зарегистрированы?
+                </h4>
+                <form accept-charset="UTF-8" role="form" id="login-register" method="post">
+                    <fieldset>
+                        <span class="help-block">
+                            Мы вышлем Вам письмо на указанный e-mail с дальнейшими инструкциями.
+                        </span>
+                        <div class="form-group input-group">
+                            <input class="form-control" placeholder="Email" name="email" type="email" required="">
+                        </div>
+                        <div class="form-group input-group">
+                            <input class="form-control" placeholder="Имя" name="name" type="text" required="">
+                        </div>
+                        <div class="form-group input-group">
+                            <input class="form-control" placeholder="Фамилия" name="lastname" type="text" required="">
+                        </div>
+                        <div class="form-group input-group">
+                            <input class="form-control" placeholder="Пароль" name="password" type="password" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-register">
+                            Зарегистрировать
+                        </button>
+                        <p class="help-block">
+                            <a class="text-muted" href="#" id="acceso" onClick="$('#form-register').hide(); $('#form-login').show()">
+                                <small>Вход</small>
+                            </a>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
