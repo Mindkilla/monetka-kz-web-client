@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="loginApp">
 <head>
     <meta charset="UTF-8">
     <title>Monetka.kz Login Page</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
+    <script src="/js/app.js"></script>
 
 </head>
 <body>
@@ -18,23 +21,23 @@
                 </i>
                 Вход
             </h4>
-            <div style="padding: 20px;" id="form-login">
+            <div style="padding: 20px;" id="form-login" ng-controller="loginController">
                 <form accept-charset="UTF-8" role="form" id="login-form" method="post">
                     <fieldset>
                         <div class="form-group input-group">
                             <span class="input-group-addon">@</span>
                             <input class="form-control" placeholder="Email" name="email" type="email" required=""
-                                   autofocus="">
+                                   autofocus="" ng-model="loginData.login">
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock"></i>
                             </span>
                             <input class="form-control" placeholder="Password" name="password" type="password" value=""
-                                   required="">
+                                   required="" ng-model="loginData.password">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">
+                            <button type="submit" ng-click="doLogin()" class="btn btn-primary btn-block">
                                 Войти
                             </button>
                             <p class="help-block">
@@ -49,7 +52,7 @@
                     </fieldset>
                 </form>
             </div>
-            <div style="display: none;" id="form-reminder">
+            <div style="display: none;" id="form-reminder" ng-controller="remindController">
                 <h4 class="">
                     Забыли пароль?
                 </h4>
@@ -76,7 +79,7 @@
                     </fieldset>
                 </form>
             </div>
-            <div style="display: none;" id="form-register">
+            <div style="display: none;" id="form-register" ng-controller="registerController">
                 <h4 class="">
                     Еще не зарегистрированы?
                 </h4>
@@ -86,18 +89,18 @@
                             Мы вышлем Вам письмо на указанный e-mail с дальнейшими инструкциями.
                         </span>
                         <div class="form-group input-group">
-                            <input class="form-control" placeholder="Email" name="email" type="email" required="">
+                            <input class="form-control" placeholder="Email" name="email" type="email" required="" ng-model="registerData.login">
                         </div>
                         <div class="form-group input-group">
-                            <input class="form-control" placeholder="Имя" name="name" type="text" required="">
+                            <input class="form-control" placeholder="Имя" name="name" type="text" required="" ng-model="registerData.name">
                         </div>
                         <div class="form-group input-group">
-                            <input class="form-control" placeholder="Фамилия" name="lastname" type="text" required="">
+                            <input class="form-control" placeholder="Фамилия" name="lastname" type="text" required="" ng-model="registerData.lastName">
                         </div>
                         <div class="form-group input-group">
-                            <input class="form-control" placeholder="Пароль" name="password" type="password" required="">
+                            <input class="form-control" placeholder="Пароль" name="password" type="password" required="" ng-model="registerData.password">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" id="btn-register">
+                        <button type="submit" ng-click="register()" class="btn btn-primary btn-block" id="btn-register">
                             Зарегистрировать
                         </button>
                         <p class="help-block">
